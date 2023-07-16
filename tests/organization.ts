@@ -37,7 +37,7 @@ describe("organization", () => {
     );
   });
 
-  it("initializes an organizatiopn by name", async () => {
+  it("initializes an organization by name", async () => {
     const {
       pubkeys: { organization },
     } = await program.methods
@@ -122,7 +122,9 @@ describe("organization", () => {
       expect(acct.tags[0]).to.eq("test");
       expect(acct.tags[1]).to.eq("tags");
 
-      expect(proposal?.toBase58()).to.eq(proposalKey(organization!, 0)[0].toBase58())
+      expect(proposal?.toBase58()).to.eq(
+        proposalKey(organization!, 0)[0].toBase58()
+      );
     });
   });
 });
